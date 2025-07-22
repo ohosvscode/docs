@@ -2,6 +2,7 @@
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f156b70a-1957-42fa-92d4-e66a3b5a916b/deploy-status)](https://app.netlify.com/projects/arkcode/deploys)
+
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/ohosvscode/docs/tree/main/examples/basics)
 [![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/ohosvscode/docs/tree/main/examples/basics)
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ohosvscode/docs)
