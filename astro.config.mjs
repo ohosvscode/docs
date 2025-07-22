@@ -1,9 +1,11 @@
-import starlight from '@astrojs/starlight'
 // @ts-check
+import netlify from '@astrojs/netlify'
+import starlight from '@astrojs/starlight'
 import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
+  adapter: netlify(),
   integrations: [
     starlight({
       title: 'Arkcode',
