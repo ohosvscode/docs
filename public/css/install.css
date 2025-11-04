@@ -1,0 +1,7 @@
+starlight-tabs li {
+  text-wrap: nowrap;
+}
+
+starlight-tabs .tablist-wrapper {
+  padding-bottom: 15px;
+}

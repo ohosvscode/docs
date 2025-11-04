@@ -1,8 +1,13 @@
 ---
 title: 安装和配置
+head:
+  - tag: link
+    attrs:
+      rel: stylesheet
+      href: /css/install.css
 ---
 
-import { LinkCard, CardGrid, Steps } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
 
 长久以来，鸿蒙开发只能在 `DevEco Studio` 中进行，而 `DevEco Studio` 的一些体验可能对一些人来说不是特别友好，毕竟它是基于 `idea` 系列的 IDE 二开的；同时，鸿蒙的开发语言 `ArkTS` 本身是基于 `TypeScript` Fork 二开出来的，而 `vscode` 本身也是基于 `TypeScript` 开发的，进而使我萌生出在 `vscode` 中开发鸿蒙项目的想法，并尝试研究它的可行性。
 
@@ -21,7 +26,7 @@ import { LinkCard, CardGrid, Steps } from '@astrojs/starlight/components';
 - 1.1.6+ 版本开始支持完美的 `$r` 函数补全和跳转、支持 `module.json5` 文件的补全和跳转、`resources/element/` 下所有`json`文件点击查询全局引用；由 [@arkts/project-detector](https://github.com/ohosvscode/project-detector) hvigor项目分析器提供强力支撑;
 - 1.1.8+ 版本开始支持 `module.json5` 文件路径补全和跳转、引用表达式错误诊断、`requestPermissions` 权限补全等一系列新功能。
 
-下面，我们将详细介绍的安装和配置方法。
+## 安装与配置
 
 <Steps>
 <ol>
@@ -37,7 +42,7 @@ import { LinkCard, CardGrid, Steps } from '@astrojs/starlight/components';
     :::note
     请注意，这个插件没有测试过与其他 `ArkTS` 语言插件同时安装等兼容性，如果遇到兼容性问题，请仅启用本 `ArkTS` 语言插件，其他插件请 `禁用` 或 `卸载`。
 
-    <details style="border: none; padding-left: 0">
+    <details class="border-none pl-0">
       <summary>点击查看演示图片</summary>
       ![ArkTS 插件列表](../../../assets/arkts-plugin-list.png "ArkTS 插件列表")
     </details>
@@ -47,8 +52,117 @@ import { LinkCard, CardGrid, Steps } from '@astrojs/starlight/components';
 
   <li>
 
-    插件安装到IDE中后, 打开一个鸿蒙项目的文件夹，并打开一个 `.ets` 文件就能首次激活插件，同时，你就能看到这样的弹窗，让你选择一个`OpenHarmony SDK`版本：
-  
+    插件安装到IDE中后, 打开一个鸿蒙项目的文件夹，并打开一个 `.ets` 文件就能首次激活插件，同时，你就能看到这样的弹窗，让你选择或下载一个 `OpenHarmony SDK` :
+
+    <Tabs>
+      <TabItem icon="seti:windows" label="Windows">
+        <div flex="~ justify-center">
+          <img src="/images/windows-ets-server-cannot-work.png" />
+        </div>
+      </TabItem>
+      <TabItem icon="apple" label="MacOS">
+        <div flex="~ justify-center">
+          <img src="/images/macos-ets-server-cannot-work.png" sm:max-w="40%" />
+        </div>
+      </TabItem>
+    </Tabs>
+
+    此时，您有三种方式配置 `OpenHarmony SDK`，下面将依次推荐这三种方式：
+
+    ### 方法一: 选择自带在 DevEco Studio 中的 SDK (推荐)
+
+    如果您的电脑中已经安装了 `DevEco Studio`, 您无需下载 `OpenHarmony SDK`, 因为 `DevEco Studio` 已经自带了 `OpenHarmony SDK`，您只需要选择已经安装在 `DevEco Studio` 中的 `OpenHarmony SDK` 即可:
+
+    <Tabs>
+      <TabItem icon="seti:windows" label="Windows">
+        
+        在 `Windows` 操作系统中，请找到您安装的 `DevEco Studio` 的安装目录。下面是一种典型的寻找 `DevEco Studio` 安装目录的方法：
+        
+        下面以 `Windows 11` 为例，请找到您的 `开始菜单`, 并找到 `DevEco Studio`, 右键点击并选择 `打开文件所在的位置`:
+
+        ![开始菜单 右键点击 更多 - DevEco Studio 打开文件所在的位置](../../../assets/windows-11-start-menu.jpg "开始菜单 右键点击 更多 - DevEco Studio 打开文件所在的位置")
+
+        然后现在来到了 `DevEco Studio` 的 `开始菜单快捷方式` 的存放目录，因为它仅是一个快捷方式，我们需要的是它指向的实际目录，因此我们对着这个 `DevEco Studio` 右键点击，选择 `打开文件所在的位置`:
+
+        ![DevEco Studio 开始菜单快捷方式 打开文件所在的位置](../../../assets/windows-11-start-menu-shortcut-location.jpg "DevEco Studio 开始菜单快捷方式 打开文件所在的位置")
+
+        然后您发现您跳到了 `DevEco Studio` 的安装目录了！但是目前我们是处于 `bin` 目录下，所以仍然需要返回一级目录，才是真正的 `DevEco Studio` 安装目录，点击地址栏的上一级返回上一级目录：
+
+        ![DevEco Studio 安装目录](../../../assets/windows-11-devEco-studio-installation-directory.jpg "DevEco Studio 安装目录")
+
+        然后，该目录有一个 `sdk` 文件夹，打开它：
+
+        ![DevEco Studio sdk 文件夹](../../../assets/windows-11-devEco-studio-sdk-directory.jpg "DevEco Studio sdk 文件夹")
+
+        一般来说这里会有一个 `default` 文件夹，打开它：
+
+        ![DevEco Studio default 文件夹](../../../assets/windows-11-devEco-studio-default-directory.png "DevEco Studio default 文件夹")
+
+        然后，您就能看到一个 `openharmony` 文件夹，打开它: 
+
+        ![DevEco Studio openharmony 文件夹](../../../assets/windows-11-devEco-studio-openharmony-directory.jpg "DevEco Studio openharmony 文件夹")
+
+        这个文件夹里面存放的就是 `DevEco Studio` 默认自带的 `OpenHarmony SDK`，确认无误，复制这个路径地址：
+
+        ![DevEco Studio openharmony 文件夹内容](../../../assets/windows-11-devEco-studio-openharmony-directory-content.jpg "DevEco Studio openharmony 文件夹内容")
+
+        然后，返回到 `vscode` 中，选择 `手动选择一个 OpenHarmony SDK 路径`, 打开文件夹选择框, 并在地址栏粘贴您刚刚复制的路径地址:
+
+        ![手动选择一个 OpenHarmony SDK 路径](../../../assets/windows-11-choose-sdk-manual.png "手动选择一个 OpenHarmony SDK 路径")
+
+        ![手动选择一个 OpenHarmony SDK 路径](../../../assets/windows-11-sdk-choose.jpg "手动选择一个 OpenHarmony SDK 路径")
+
+        一切完成！🎉 看看您的 `.ets` 文件是不是已经可以正常地使用补全、高亮、跳转、错误提示等所有代码功能了？
+      </TabItem>
+    </Tabs>
+
+    ### 方法二: 选择DevEco Studio 设置中的 OpenHarmony SDK
+
+    如果您找不到对应的目录（这通常与您使用的是较旧版的 `DevEco Studio` 有关），您也可以通过 `DevEco Studio` 的设置中的 `OpenHarmony SDK` 选项来找到 `SDK` 路径：
+
+    <Tabs>
+      <TabItem icon="apple" label="MacOS">
+        打开 `DevEco Studio` 的设置，可以在欢迎页的右下角找到 `设置` 按钮，选择 `设置` 菜单项:
+
+        <div flex="~ justify-center">
+          <img src="/images/deveco-homepage-settings.png" sm:max-w="40%" />
+        </div>
+
+        然后在弹出的设置页面的左侧菜单项中找到 `OpenHarmony SDK` 选项，切换到该页面：
+
+        ![DevEco Studio 设置页面](../../../assets/deveco-settings-openharmony-sdk.png "DevEco Studio 设置页面")
+
+        可以看到这里罗列了多个 `OpenHarmony SDK` 的版本, 请先下载一个您需要的版本, 如果您不知道要下哪个版本的话, 那就下当前最新的版本即可。
+
+        :::note
+
+        请注意, 无论您想使用哪个SDK版本, 请把所有的选项（`ArkTS`、`JS`、`Native`、`Previewer`、`toolchains`等）全部都勾上，以避免出现缺少某些组件导致无法正常使用的情况。
+
+        :::
+
+        当您下载好之后，复制上面的 `OpenHarmony SDK位置` 路径地址，打开`访达`, 选择菜单里的`前往` -> `前往文件夹`，粘贴您刚刚复制的路径地址，然后回车，即可到达 `OpenHarmony SDK` 的安装目录:
+
+        <div flex="~ justify-center">
+          <img src="/images/macos-goto.png" sm:max-w="30%" />
+        </div>
+
+        ![OpenHarmony SDK 安装目录](../../../assets/macos-sdk-collection-directory.png "OpenHarmony SDK 安装目录")
+
+        这里的数字代表的就是`OpenHarmony SDK` 的版本号，您需要找到您刚刚下载的 `OpenHarmony SDK` 的版本号，然后按住键盘上的 `Option` 键并右键该文件夹，选择`将 (xx SDK版本) 拷贝为路径名称`, 复制该文件夹的路径，然后返回到 `vscode` 中，选择 `手动选择一个 OpenHarmony SDK 路径`, 打开文件夹选择框:
+
+        <div flex="~ justify-center">
+          <img src="/images/macos-choose-sdk-manual.png" sm:max-w="60%" />
+        </div>
+
+        然后，在文件夹选择框中按下 `Command + Shift + G` 快捷键，打开 `前往文件夹` 输入框，粘贴您刚刚复制的路径地址，然后回车，即可到达 您刚刚复制的路径地址:
+        
+        ![前往文件夹](../../../assets/macos-sdk-choose.png "前往文件夹")
+
+        一切完成！🎉 看看您的 `.ets` 文件是不是已经可以正常地使用补全、高亮、跳转、错误提示等所有代码功能了？
+      </TabItem>
+    </Tabs>
+
+    ### 方法三: 直接通过 ArkTS 插件下载 SDK
   </li>
 </ol>
 </Steps>

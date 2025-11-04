@@ -20,6 +20,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^4.17.0",
     "eslint": "^9.31.0",
-    "pnpm": "^10.13.1"
+    "pnpm": "^10.13.1",
+    "unocss": "^66.5.4"
   }
 }
