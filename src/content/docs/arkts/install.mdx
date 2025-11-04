@@ -1,0 +1,56 @@
+---
+title: 安装和配置
+---
+
+import { LinkCard, CardGrid, Steps } from '@astrojs/starlight/components';
+
+长久以来，鸿蒙开发只能在 `DevEco Studio` 中进行，而 `DevEco Studio` 的一些体验可能对一些人来说不是特别友好，毕竟它是基于 `idea` 系列的 IDE 二开的；同时，鸿蒙的开发语言 `ArkTS` 本身是基于 `TypeScript` Fork 二开出来的，而 `vscode` 本身也是基于 `TypeScript` 开发的，进而使我萌生出在 `vscode` 中开发鸿蒙项目的想法，并尝试研究它的可行性。
+
+目前，实践证明，这一切是行得通的，目前该插件仍然在积极开发中，并且已经取得了一定的成果，目前已经支持以下功能：
+
+- 1.x版本开始具备完整的`ArkTS`语言支持，全量支持所有`ArkTS`语法，包括各种 `代码补全`、`代码高亮`、`引用跳转`、`错误提示`、`代码格式化` 等完备的语言功能；
+- 完善的`JSON Schema`支持。支持以下文件的`JSON Schema`：
+  - `build-profile.json5` 模块级别/项目级别配置
+  - `oh-package.json5` 模块级别/项目级别配置
+  - `module.json5` 模块级别/项目级别配置
+  - `code-linter.json5` 模块级别/项目级别配置
+  - `resources/element/`下所有的`color.json`、`string.json`等的kv值配置
+  - `main_pages.json5`
+  - 以及更多!
+- 1.x版本开始支持安装和管理`OpenHarmony SDK`，并且支持根据当前打开的项目自动探测`API版本`，发出弹窗提示`下载`或`切换`;
+- 1.1.6+ 版本开始支持完美的 `$r` 函数补全和跳转、支持 `module.json5` 文件的补全和跳转、`resources/element/` 下所有`json`文件点击查询全局引用；由 [@arkts/project-detector](https://github.com/ohosvscode/project-detector) hvigor项目分析器提供强力支撑;
+- 1.1.8+ 版本开始支持 `module.json5` 文件路径补全和跳转、引用表达式错误诊断、`requestPermissions` 权限补全等一系列新功能。
+
+下面，我们将详细介绍的安装和配置方法。
+
+<Steps>
+<ol>
+  <li>
+
+    目前，该插件在 `open-vsx` 和 `vscode marketplace` 上均可找到，直接在`类 vscode` 的编辑器中（如 `vscode`、`cursor`、`trae`、`argument`、`codebuddy`等）搜索 `ArkTS` 即可找到该插件。如果您搜不到该插件，可以点击下面的链接跳转到对应的商店页面进行安装：
+
+    <CardGrid>
+      <LinkCard title="vscode marketplace" description="点击前往 microsoft marketplace 进行安装。" href="https://marketplace.visualstudio.com/items?itemName=NailyZero.vscode-naily-ets" target="_blank" />
+      <LinkCard title="open-vsx" description="点击前往 eclipse open-vsx 进行安装。" href="https://open-vsx.org/extension/NailyZero/vscode-naily-ets" target="_blank" />
+    </CardGrid>
+
+    :::note
+    请注意，这个插件没有测试过与其他 `ArkTS` 语言插件同时安装等兼容性，如果遇到兼容性问题，请仅启用本 `ArkTS` 语言插件，其他插件请 `禁用` 或 `卸载`。
+
+    <details style="border: none; padding-left: 0">
+      <summary>点击查看演示图片</summary>
+      ![ArkTS 插件列表](../../../assets/arkts-plugin-list.png "ArkTS 插件列表")
+    </details>
+    :::
+
+  </li>
+
+  <li>
+
+    插件安装到IDE中后, 打开一个鸿蒙项目的文件夹，并打开一个 `.ets` 文件就能首次激活插件，同时，你就能看到这样的弹窗，让你选择一个`OpenHarmony SDK`版本：
+  
+  </li>
+</ol>
+</Steps>
+
+TODO
