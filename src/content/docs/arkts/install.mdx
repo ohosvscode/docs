@@ -5,6 +5,9 @@ head:
     attrs:
       rel: stylesheet
       href: /css/install.css
+tableOfContents:
+  minHeadingLevel: 2
+  maxHeadingLevel: 6
 ---
 
 import { LinkCard, CardGrid, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -32,7 +35,9 @@ import { LinkCard, CardGrid, Steps, Tabs, TabItem } from '@astrojs/starlight/com
 <ol>
   <li>
 
-    目前，该插件在 `open-vsx` 和 `vscode marketplace` 上均可找到，直接在`类 vscode` 的编辑器中（如 `vscode`、`cursor`、`trae`、`argument`、`codebuddy`等）搜索 `ArkTS` 即可找到该插件。如果您搜不到该插件，可以点击下面的链接跳转到对应的商店页面进行安装：
+    ##### 安装插件
+
+    目前，该插件在 `open-vsx` 和 `vscode marketplace` 上均可找到，直接在`类 vscode` 的编辑器中（如 `vscode`、`cursor`、`trae`、`argument`、`codebuddy`等）搜索 `Naily's ArkTS Support` 即可找到该插件。如果您搜不到该插件，可以点击下面的链接跳转到对应的商店页面进行安装：
 
     <CardGrid>
       <LinkCard title="vscode marketplace" description="点击前往 microsoft marketplace 进行安装。" href="https://marketplace.visualstudio.com/items?itemName=NailyZero.vscode-naily-ets" target="_blank" />
@@ -51,6 +56,8 @@ import { LinkCard, CardGrid, Steps, Tabs, TabItem } from '@astrojs/starlight/com
   </li>
 
   <li>
+
+    ##### 配置 OpenHarmony SDK
 
     插件安装到IDE中后, 打开一个鸿蒙项目的文件夹，并打开一个 `.ets` 文件就能首次激活插件，同时，你就能看到这样的弹窗，让你选择或下载一个 `OpenHarmony SDK` :
 
@@ -111,6 +118,29 @@ import { LinkCard, CardGrid, Steps, Tabs, TabItem } from '@astrojs/starlight/com
         ![手动选择一个 OpenHarmony SDK 路径](../../../assets/windows-11-choose-sdk-manual.png "手动选择一个 OpenHarmony SDK 路径")
 
         ![手动选择一个 OpenHarmony SDK 路径](../../../assets/windows-11-sdk-choose.jpg "手动选择一个 OpenHarmony SDK 路径")
+
+        一切完成！🎉 看看您的 `.ets` 文件是不是已经可以正常地使用补全、高亮、跳转、错误提示等所有代码功能了？
+      </TabItem>
+      <TabItem icon="apple" label="MacOS">
+        在 `MacOS` 操作系统中，请打开 `访达`, 找到 `应用程序` 文件夹, 并找到 `DevEco Studio` 文件夹, 右键点击并选择 `显示包内容`:
+
+        <div flex="~ justify-center">
+          <img src="/images/macos-show-app-package-content.png" sm:max-w="80%" />
+        </div>
+
+        然后依次打开 `/Contents/sdk/default/openharmony` 文件夹, 并按住 `Option` 键并右键点击 `openharmony` 文件夹, 选择`将 "openharmony" 拷贝为路径名称`:
+
+        ![MacOS 导航到 openharmony 文件夹路径](../../../assets/macos-navigate-to-openharmony-directory.png "MacOS 导航到 openharmony 文件夹路径")
+
+        然后, 回到 `vscode` 中, 选择 `手动选择一个 OpenHarmony SDK 路径`, 打开文件夹选择框, 并在地址栏粘贴您刚刚复制的路径地址:
+
+        <div flex="~ justify-center">
+          <img src="/images/macos-choose-sdk-manual.png" sm:max-w="60%" />
+        </div>
+
+        然后, 在文件夹选择框中按下 `Command + Shift + G` 快捷键, 打开 `前往文件夹` 输入框, 粘贴您刚刚复制的路径地址, 然后回车, 即可到达 您刚刚复制的路径地址; 并确认是否正确之后，点击 `打开` 按钮:
+
+        ![MacOS 选择一个 OpenHarmony SDK 路径](../../../assets/macos-sdk-choose.png "MacOS 选择一个 OpenHarmony SDK 路径")
 
         一切完成！🎉 看看您的 `.ets` 文件是不是已经可以正常地使用补全、高亮、跳转、错误提示等所有代码功能了？
       </TabItem>
