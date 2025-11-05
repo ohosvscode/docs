@@ -15,6 +15,7 @@ export default defineConfig({
       sidebar: [
         { label: 'Naily\'s ArkTS Support', autogenerate: { directory: 'arkts' } },
       ],
+      customCss: ['./src/styles/custom.css'],
       locales: {
         root: {
           label: '简体中文',
