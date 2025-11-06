@@ -12,6 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@arkts/twoslash-expressive-code": "^0.5.5",
     "@astrojs/netlify": "^6.5.2",
     "@astrojs/starlight": "^0.35.1",
     "astro": "^5.6.1",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^4.17.0",
     "eslint": "^9.31.0",
+    "expressive-code-twoslash": "^0.5.3",
     "pnpm": "^10.13.1",
     "unocss": "^66.5.4"
   }

@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@arkts/twoslash-expressive-code':
+        specifier: ^0.5.5
+        version: 0.5.5(@expressive-code/core@0.41.3)(expressive-code@0.41.3)(ohos-typescript@4.9.5-r10)(typescript@5.9.3)
       '@astrojs/netlify':
         specifier: ^6.5.2
         version: 6.5.2(@types/node@24.0.15)(astro@5.12.1(@netlify/blobs@10.0.6)(@types/node@24.0.15)(jiti@2.6.1)(rollup@4.45.1)(typescript@5.9.3)(yaml@2.8.0))(jiti@2.6.1)(rollup@4.45.1)(yaml@2.8.0)
@@ -27,6 +30,9 @@ importers:
       eslint:
         specifier: ^9.31.0
         version: 9.31.0(jiti@2.6.1)
+      expressive-code-twoslash:
+        specifier: ^0.5.3
+        version: 0.5.3(@expressive-code/core@0.41.3)(expressive-code@0.41.3)(typescript@5.9.3)
       pnpm:
         specifier: ^10.13.1
         version: 10.13.1
@@ -90,6 +96,21 @@ packages:
 
   '@antfu/utils@9.3.0':
     resolution: {integrity: sha512-9hFT4RauhcUzqOE4f1+frMKLZrgNog5b06I7VmZQV1BkvwvqrbC8EBZf3L1eEL2AKb6rNKjER0sEvJiSP1FXEA==, tarball: https://registry.npmjs.org/@antfu/utils/-/utils-9.3.0.tgz}
+
+  '@arkts/twoslash-expressive-code@0.5.5':
+    resolution: {integrity: sha512-YhtHEGTzpTMH4jk0wGQX1JgFIW2CRkSqMYEVy9mlcOeDbeLpBUoUYXqJT1I+BcIyn3Jm5QMfU1akH35GJciVjQ==, tarball: https://registry.npmjs.org/@arkts/twoslash-expressive-code/-/twoslash-expressive-code-0.5.5.tgz}
+    peerDependencies:
+      '@expressive-code/core': '>=0.40.0'
+      expressive-code: '>=0.40.0'
+      typescript: ^5.7
+
+  '@arkts/twoslash@0.3.5':
+    resolution: {integrity: sha512-Zb2JsW1dwIFMTanViDOST2gLNVyFtgtP5laxiMhyFB1eVmuGljOljnrN/oLwinFdHyeVKguMQEToYTRyUk+06Q==, tarball: https://registry.npmjs.org/@arkts/twoslash/-/twoslash-0.3.5.tgz}
+    peerDependencies:
+      ohos-typescript: ^4.9.5-r10
+
+  '@arkts/vfs@1.1.5':
+    resolution: {integrity: sha512-aN/s8WmzB71n6ZR/Nn9AgMUca5r7N3eRX/lhEoVRIcqk0UsfekDOuJo7tNOVwp27rd/au/GsDi/ZGW8YQzeS3Q==, tarball: https://registry.npmjs.org/@arkts/vfs/-/vfs-1.1.5.tgz}
 
   '@astrojs/compiler@2.12.2':
     resolution: {integrity: sha512-w2zfvhjNCkNMmMMOn5b0J8+OmUaBL1o40ipMvqcG6NRpdC+lKxmTi48DT8Xw0SzJ3AfmeFLB45zXZXtmbsjcgw==}
@@ -1016,15 +1037,15 @@ packages:
     hasBin: true
 
   '@nodelib/fs.scandir@2.1.5':
-    resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
+    resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==, tarball: https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz}
     engines: {node: '>= 8'}
 
   '@nodelib/fs.stat@2.0.5':
-    resolution: {integrity: sha512-RkhPPp2zrqDAQA/2jNhnztcPAlv64XdhIp7a7454A5ovI7Bukxgt7MX7udwAu3zg1DcpPU0rz3VV1SeaqvY4+A==}
+    resolution: {integrity: sha512-RkhPPp2zrqDAQA/2jNhnztcPAlv64XdhIp7a7454A5ovI7Bukxgt7MX7udwAu3zg1DcpPU0rz3VV1SeaqvY4+A==, tarball: https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz}
     engines: {node: '>= 8'}
 
   '@nodelib/fs.walk@1.2.8':
-    resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
+    resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==, tarball: https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz}
     engines: {node: '>= 8'}
 
   '@oslojs/encoding@1.1.0':
@@ -1421,6 +1442,11 @@ packages:
   '@typescript-eslint/visitor-keys@8.38.0':
     resolution: {integrity: sha512-pWrTcoFNWuwHlA9CvlfSsGWs14JxfN1TH25zM5L7o0pRLhsoZkDnTsXfQRJBEWJoV5DL0jf+Z+sxiud+K0mq1g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@typescript/vfs@1.6.2':
+    resolution: {integrity: sha512-hoBwJwcbKHmvd2QVebiytN1aELvpk9B74B4L1mFm/XT1Q/VOYAWl2vQ9AWRFtQq8zmz6enTpfTV8WRc4ATjW/g==, tarball: https://registry.npmjs.org/@typescript/vfs/-/vfs-1.6.2.tgz}
+    peerDependencies:
+      typescript: '*'
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
@@ -2488,6 +2514,13 @@ packages:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
 
+  expressive-code-twoslash@0.5.3:
+    resolution: {integrity: sha512-BcttA3taicvhesKpQ4TvRxoDHByDr2FH6bvjc6elxC8TXVU3GVZv0wHvdcNz9xrVEUcwbDbsprqsGF7M7Yq59A==, tarball: https://registry.npmjs.org/expressive-code-twoslash/-/expressive-code-twoslash-0.5.3.tgz}
+    peerDependencies:
+      '@expressive-code/core': '>=0.40.0'
+      expressive-code: '>=0.40.0'
+      typescript: ^5.7
+
   expressive-code@0.41.3:
     resolution: {integrity: sha512-YLnD62jfgBZYrXIPQcJ0a51Afv9h8VlWqEGK9uU2T5nL/5rb8SnA86+7+mgCZe5D34Tff5RNEA5hjNVJYHzrFg==}
 
@@ -2509,7 +2542,7 @@ packages:
     resolution: {integrity: sha512-/d9sfos4yxzpwkDkuN7k2SqFKtYNmCTzgfEpz82x34IM9/zc8KGxQoXg1liNC/izpRM/MBdt44Nmx41ZWqk+FQ==}
 
   fast-glob@3.3.3:
-    resolution: {integrity: sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==}
+    resolution: {integrity: sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==, tarball: https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.3.tgz}
     engines: {node: '>=8.6.0'}
 
   fast-json-stable-stringify@2.1.0:
@@ -2525,7 +2558,7 @@ packages:
     resolution: {integrity: sha512-Atfo14OibSv5wAp4VWNsFYE1AchQRTv9cBGWET4pZWHzYshFSS9NQI6I57rdKn9croWVMbYFbLhJ+yJvmZIIHw==}
 
   fastq@1.19.1:
-    resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
+    resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==, tarball: https://registry.npmjs.org/fastq/-/fastq-1.19.1.tgz}
 
   fault@2.0.1:
     resolution: {integrity: sha512-WtySTkS4OKev5JtpHXnib4Gxiurzh5NCGvWrFaZ34m6JehfTUhKZvn9njTfw48t6JumVQOmrKqpmGcdwxnhqBQ==}
@@ -3262,7 +3295,7 @@ packages:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
 
   merge2@1.4.1:
-    resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
+    resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==, tarball: https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz}
     engines: {node: '>= 8'}
 
   micro-api-client@3.3.0:
@@ -3543,6 +3576,11 @@ packages:
   ohash@2.0.11:
     resolution: {integrity: sha512-RdR9FQrFwNBNXAr4GixM8YaRZRJ5PUWbKYbE5eOsrwAjJW0q2REGcf79oYPsLyskQCZG1PLN+S/K1V00joZAoQ==}
 
+  ohos-typescript@4.9.5-r10:
+    resolution: {integrity: sha512-UyLXhBnUe5H4HGugf1ocYPawod0Q4ituiUATYoHIR5y4uxnH4+8ddD39aeLgcQah1YMv2DRKRaL9W1jgtnbEtQ==, tarball: https://registry.npmjs.org/ohos-typescript/-/ohos-typescript-4.9.5-r10.tgz}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+
   omit.js@2.0.2:
     resolution: {integrity: sha512-hJmu9D+bNB40YpL9jYebQl4lsTW6yEHRTroJzNLqQJYHm7c+NQnJGfZmIWh8S3q3KoaxV1aLhV6B3+0N0/kyJg==}
 
@@ -3790,7 +3828,7 @@ packages:
     resolution: {integrity: sha512-AifT7QEbW9Nri4tAwR5M/uzpBuqfZf+zwaEM/QkzEjj7NBuFD2rBuy0K3dE+8wltbezDV7JMA0WfnCPYRSYbXA==, tarball: https://registry.npmjs.org/quansync/-/quansync-0.2.11.tgz}
 
   queue-microtask@1.2.3:
-    resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+    resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==, tarball: https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz}
 
   quote-unquote@1.0.0:
     resolution: {integrity: sha512-twwRO/ilhlG/FIgYeKGFqyHhoEhqgnKVkcmqMKi2r524gz3ZbDTcyFt38E9xjJI2vT+KbRNHVbnJ/e0I25Azwg==}
@@ -3957,7 +3995,7 @@ packages:
     engines: {node: '>= 4'}
 
   reusify@1.1.0:
-    resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
+    resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==, tarball: https://registry.npmjs.org/reusify/-/reusify-1.1.0.tgz}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
   rollup@4.45.1:
@@ -3966,7 +4004,7 @@ packages:
     hasBin: true
 
   run-parallel@1.2.0:
-    resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
+    resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==, tarball: https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz}
 
   safe-buffer@5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
@@ -4259,6 +4297,17 @@ packages:
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==, tarball: https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz}
+
+  twoslash-protocol@0.2.12:
+    resolution: {integrity: sha512-5qZLXVYfZ9ABdjqbvPc4RWMr7PrpPaaDSeaYY55vl/w1j6H6kzsWK/urAEIXlzYlyrFmyz1UbwIt+AA0ck+wbg==, tarball: https://registry.npmjs.org/twoslash-protocol/-/twoslash-protocol-0.2.12.tgz}
+
+  twoslash-protocol@0.3.4:
+    resolution: {integrity: sha512-HHd7lzZNLUvjPzG/IE6js502gEzLC1x7HaO1up/f72d8G8ScWAs9Yfa97igelQRDl5h9tGcdFsRp+lNVre1EeQ==, tarball: https://registry.npmjs.org/twoslash-protocol/-/twoslash-protocol-0.3.4.tgz}
+
+  twoslash@0.2.12:
+    resolution: {integrity: sha512-tEHPASMqi7kqwfJbkk7hc/4EhlrKCSLcur+TcvYki3vhIfaRMXnXjaYFgXpoZRbT6GdprD4tGuVBEmTpUgLBsw==, tarball: https://registry.npmjs.org/twoslash/-/twoslash-0.2.12.tgz}
+    peerDependencies:
+      typescript: '*'
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -4707,6 +4756,28 @@ snapshots:
       tinyexec: 1.0.1
 
   '@antfu/utils@9.3.0': {}
+
+  '@arkts/twoslash-expressive-code@0.5.5(@expressive-code/core@0.41.3)(expressive-code@0.41.3)(ohos-typescript@4.9.5-r10)(typescript@5.9.3)':
+    dependencies:
+      '@arkts/twoslash': 0.3.5(ohos-typescript@4.9.5-r10)
+      '@expressive-code/core': 0.41.3
+      expressive-code: 0.41.3
+      mdast-util-from-markdown: 2.0.2
+      mdast-util-gfm: 3.1.0
+      mdast-util-to-hast: 13.2.0
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - ohos-typescript
+      - supports-color
+
+  '@arkts/twoslash@0.3.5(ohos-typescript@4.9.5-r10)':
+    dependencies:
+      '@typescript/vfs': '@arkts/vfs@1.1.5'
+      fast-glob: 3.3.3
+      ohos-typescript: 4.9.5-r10
+      twoslash-protocol: 0.3.4
+
+  '@arkts/vfs@1.1.5': {}
 
   '@astrojs/compiler@2.12.2': {}
 
@@ -6182,6 +6253,13 @@ snapshots:
       '@typescript-eslint/types': 8.38.0
       eslint-visitor-keys: 4.2.1
 
+  '@typescript/vfs@1.6.2(typescript@5.9.3)':
+    dependencies:
+      debug: 4.4.1
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - supports-color
+
   '@ungap/structured-clone@1.3.0': {}
 
   '@unocss/astro@66.5.4(vite@6.3.5(@types/node@24.0.15)(jiti@2.6.1)(yaml@2.8.0))':
@@ -7538,6 +7616,18 @@ snapshots:
       onetime: 6.0.0
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
+
+  expressive-code-twoslash@0.5.3(@expressive-code/core@0.41.3)(expressive-code@0.41.3)(typescript@5.9.3):
+    dependencies:
+      '@expressive-code/core': 0.41.3
+      expressive-code: 0.41.3
+      mdast-util-from-markdown: 2.0.2
+      mdast-util-gfm: 3.1.0
+      mdast-util-to-hast: 13.2.0
+      twoslash: 0.2.12(typescript@5.9.3)
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - supports-color
 
   expressive-code@0.41.3:
     dependencies:
@@ -8964,6 +9054,8 @@ snapshots:
 
   ohash@2.0.11: {}
 
+  ohos-typescript@4.9.5-r10: {}
+
   omit.js@2.0.2: {}
 
   once@1.4.0:
@@ -9857,6 +9949,18 @@ snapshots:
       typescript: 5.9.3
 
   tslib@2.8.1: {}
+
+  twoslash-protocol@0.2.12: {}
+
+  twoslash-protocol@0.3.4: {}
+
+  twoslash@0.2.12(typescript@5.9.3):
+    dependencies:
+      '@typescript/vfs': 1.6.2(typescript@5.9.3)
+      twoslash-protocol: 0.2.12
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - supports-color
 
   type-check@0.4.0:
     dependencies:

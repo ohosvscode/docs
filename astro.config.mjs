@@ -14,6 +14,8 @@ export default defineConfig({
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/ohosvscode' }],
       sidebar: [
         { label: 'Naily\'s ArkTS Support', autogenerate: { directory: 'arkts' } },
+        { label: 'Twoslash for ArkTS', autogenerate: { directory: 'twoslash' } },
+        { label: 'Electron on HarmonyOS PC', autogenerate: { directory: 'electron' } },
       ],
       customCss: ['./src/styles/custom.css'],
       locales: {
