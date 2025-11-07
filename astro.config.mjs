@@ -12,6 +12,7 @@ export default defineConfig({
     starlight({
       title: 'Arkcode',
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/ohosvscode' }],
+      favicon: '/favicon.png',
       sidebar: [
         { label: 'Naily\'s ArkTS Support', autogenerate: { directory: 'arkts' } },
         { label: 'Twoslash for ArkTS', autogenerate: { directory: 'twoslash' } },
