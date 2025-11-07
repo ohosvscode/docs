@@ -12,7 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@arkts/twoslash-expressive-code": "^0.5.5",
+    "@arkts/twoslash-expressive-code": "^0.5.7",
     "@astrojs/netlify": "^6.5.2",
     "@astrojs/starlight": "^0.35.1",
     "astro": "^5.6.1",

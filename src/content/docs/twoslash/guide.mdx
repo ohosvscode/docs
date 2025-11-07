@@ -1,15 +1,17 @@
 ---
-title: 开始使用
+title: 介绍与使用
+sidebar:
+  order: 1
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Tabs, TabItem, LinkCard } from '@astrojs/starlight/components';
 
 `Twoslash` 是由 [Orta Therox](https://orta.io) 和 [Anthony Fu](https://antfu.me) 两位大佬推出的一套为 `文档` 和 `TypeScript 示例代码` 增强语义信息的工具，能够在为基于 `Markdown` 的文档框架（如 [VitePress](https://vitepress.dev) 和 [Astro Starlight](https://starlight.astro.build) 等）在网页文档中即时渲染和 `vscode` 几乎一模一样的 `代码提示`、`补全`、`错误提示` 等语义信息。现在，我们把它带到了 `ArkTS` 语言中，让 `ArkTS` 语言的文档和示例代码也拥有同样的体验！
 
-下面是一个简单的 `ArkTS Twoslash` 示例，我们这个文档是基于 `Astro Starlight` 框架构建的，因此允许开箱即用:
+下面是一个简单的 `ArkTS Twoslash` 示例，我们这个文档是基于 `Astro Starlight` 框架构建的，因此允许开箱即用。您可以将鼠标移到代码上（如果您使用的移动端设备，可以点击一下代码段），如下面的 `struct Index` 的 `Index`, 以及 `@Component` 的 `Component` 等，都会出现对应的语义信息：
 
 <Tabs>
-  <TabItem label="Twoslash 渲染">
+  <TabItem label="Twoslash 渲染后效果">
     ```ets twoslash
     @Entry
     @Component
@@ -49,10 +51,14 @@ function add(a: number, b: number): number {
 add(1, 2);
 ```
 
-`TSX` 语法也完全没有任何问题：
+`TSX` 语法也完全没有任何影响：
 
 ```tsx twoslash
 const a = <div>Hello, World!</div>;
 ```
 
-TODO
+## 使用和演示
+
+<LinkCard title="Twoslash 查询" description="查询 Twoslash 的用法和示例。" href="/twoslash/twoslash-query" />
+
+TODO: 安装方法待补充

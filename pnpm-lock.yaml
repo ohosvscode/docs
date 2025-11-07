@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@arkts/twoslash-expressive-code':
-        specifier: ^0.5.5
-        version: 0.5.5(@expressive-code/core@0.41.3)(expressive-code@0.41.3)(ohos-typescript@4.9.5-r10)(typescript@5.9.3)
+        specifier: ^0.5.7
+        version: 0.5.7(@expressive-code/core@0.41.3)(expressive-code@0.41.3)(ohos-typescript@4.9.5-r10)(typescript@5.9.3)
       '@astrojs/netlify':
         specifier: ^6.5.2
         version: 6.5.2(@types/node@24.0.15)(astro@5.12.1(@netlify/blobs@10.0.6)(@types/node@24.0.15)(jiti@2.6.1)(rollup@4.45.1)(typescript@5.9.3)(yaml@2.8.0))(jiti@2.6.1)(rollup@4.45.1)(yaml@2.8.0)
@@ -100,15 +100,15 @@ packages:
   '@antfu/utils@9.3.0':
     resolution: {integrity: sha512-9hFT4RauhcUzqOE4f1+frMKLZrgNog5b06I7VmZQV1BkvwvqrbC8EBZf3L1eEL2AKb6rNKjER0sEvJiSP1FXEA==, tarball: https://registry.npmjs.org/@antfu/utils/-/utils-9.3.0.tgz}
 
-  '@arkts/twoslash-expressive-code@0.5.5':
-    resolution: {integrity: sha512-YhtHEGTzpTMH4jk0wGQX1JgFIW2CRkSqMYEVy9mlcOeDbeLpBUoUYXqJT1I+BcIyn3Jm5QMfU1akH35GJciVjQ==, tarball: https://registry.npmjs.org/@arkts/twoslash-expressive-code/-/twoslash-expressive-code-0.5.5.tgz}
+  '@arkts/twoslash-expressive-code@0.5.7':
+    resolution: {integrity: sha512-O5aGZ1NIYQ9nKzmoZMHre37Zy0v5MBroD9mUeAs4vsQcrkbxsOgwsEpIJYR5bT1aF6lcsphXyxSLPkkhSdaETQ==, tarball: https://registry.npmjs.org/@arkts/twoslash-expressive-code/-/twoslash-expressive-code-0.5.7.tgz}
     peerDependencies:
       '@expressive-code/core': '>=0.40.0'
       expressive-code: '>=0.40.0'
       typescript: ^5.7
 
-  '@arkts/twoslash@0.3.5':
-    resolution: {integrity: sha512-Zb2JsW1dwIFMTanViDOST2gLNVyFtgtP5laxiMhyFB1eVmuGljOljnrN/oLwinFdHyeVKguMQEToYTRyUk+06Q==, tarball: https://registry.npmjs.org/@arkts/twoslash/-/twoslash-0.3.5.tgz}
+  '@arkts/twoslash@0.3.7':
+    resolution: {integrity: sha512-6pBK94d9aAT7gp0DfuYN+1F3H3W0ssIT4j93xSCl+YIVW+pwYZyO/j+9U+SUHNSHzhT/givjezXGCspu9SXrsg==, tarball: https://registry.npmjs.org/@arkts/twoslash/-/twoslash-0.3.7.tgz}
     peerDependencies:
       ohos-typescript: ^4.9.5-r10
 
@@ -4766,9 +4766,9 @@ snapshots:
 
   '@antfu/utils@9.3.0': {}
 
-  '@arkts/twoslash-expressive-code@0.5.5(@expressive-code/core@0.41.3)(expressive-code@0.41.3)(ohos-typescript@4.9.5-r10)(typescript@5.9.3)':
+  '@arkts/twoslash-expressive-code@0.5.7(@expressive-code/core@0.41.3)(expressive-code@0.41.3)(ohos-typescript@4.9.5-r10)(typescript@5.9.3)':
     dependencies:
-      '@arkts/twoslash': 0.3.5(ohos-typescript@4.9.5-r10)
+      '@arkts/twoslash': 0.3.7(ohos-typescript@4.9.5-r10)
       '@expressive-code/core': 0.41.3
       expressive-code: 0.41.3
       mdast-util-from-markdown: 2.0.2
@@ -4779,7 +4779,7 @@ snapshots:
       - ohos-typescript
       - supports-color
 
-  '@arkts/twoslash@0.3.5(ohos-typescript@4.9.5-r10)':
+  '@arkts/twoslash@0.3.7(ohos-typescript@4.9.5-r10)':
     dependencies:
       '@typescript/vfs': '@arkts/vfs@1.1.5'
       fast-glob: 3.3.3
