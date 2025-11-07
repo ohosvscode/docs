@@ -14,7 +14,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 您可以使用 `^?` 符号并结合 `//` 注释来提取类型：
 
 <Tabs>
-  <TabItem label="Twoslash 渲染后效果">
+  <TabItem label="Twoslash 渲染后">
     ```ets twoslash
     struct Index {
       build() {
@@ -24,9 +24,13 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
          // ^?
       }
     }
+
+    @interface MyInterface {
+      value: string
+    }
     ```
   </TabItem>
-  <TabItem label="Markdown 原始代码">
+  <TabItem label="Markdown 源代码">
     ```ets
     struct Index {
       build() {
@@ -47,7 +51,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 您可以使用 `^|` 符号并结合 `//` 注释来展示代码补全：
 
 <Tabs>
-  <TabItem label="Twoslash 渲染后效果">
+  <TabItem label="Twoslash 渲染后">
     ```ets twoslash
     // @noErrors
     struct Index {
@@ -60,7 +64,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
     }
     ```
   </TabItem>
-  <TabItem label="Markdown 原始代码">
+  <TabItem label="Markdown 源代码">
     ```ets
     // @noErrors
     struct Index {
@@ -88,7 +92,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 您可以使用 `^^^` 符号并结合 `//` 注释来高亮特定范围的代码：
 
 <Tabs>
-  <TabItem label="Twoslash 渲染后效果">
+  <TabItem label="Twoslash 渲染后">
     ```ets twoslash
     struct Index {
         // ^^^^^
@@ -100,7 +104,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
     }
     ```
   </TabItem>
-  <TabItem label="Markdown 原始代码">
+  <TabItem label="Markdown 源代码">
     ```ets
     struct Index {
         // ^^^^^
@@ -127,7 +131,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
 这个注释会在 `TypeScript` 生成项目并提取所有编辑器信息（如标识符、查询、高亮等）后，调整所有偏移量和行数以便只渲染用户所关心的代码。用户看到的是 `// ---cut-before---` 之后的所有内容，也可以简写 `// ---cut---` 来达到效果。
 
 <Tabs>
-  <TabItem label="Twoslash 渲染后效果">
+  <TabItem label="Twoslash 渲染后">
     ```ets twoslash
     import { ArcList, ArcListItem } from "@kit.ArkUI";
 
@@ -145,7 +149,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
     }
     ```
   </TabItem>
-  <TabItem label="Markdown 原始代码">
+  <TabItem label="Markdown 源代码">
     ```ets
     import { ArcList, ArcListItem } from "@kit.ArkUI";
 
@@ -174,7 +178,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
 结合 `// ---cut-before---` 注释，可以裁剪掉不需要展示的文件内容。
 
 <Tabs>
-  <TabItem label="Twoslash 渲染后效果">
+  <TabItem label="Twoslash 渲染后">
     ```ets twoslash frame="none"
     // @filename: foo.ets
     /**
@@ -196,7 +200,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
     }
     ```
   </TabItem>
-  <TabItem label="Markdown 原始代码">
+  <TabItem label="Markdown 源代码">
     ```ets frame="none"
     // @filename: foo.ets
     /**
@@ -225,7 +229,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
 这个注释和 `// ---cut-before---` 注释相反，它会保留前面的代码。
 
 <Tabs>
-  <TabItem label="Twoslash 渲染后效果">
+  <TabItem label="Twoslash 渲染后">
     ```ets twoslash
     import { ArcList, ArcListItem } from '@kit.ArkUI'
     // ---cut-after---
@@ -243,7 +247,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
     }
     ```
   </TabItem>
-  <TabItem label="Markdown 原始代码">
+  <TabItem label="Markdown 源代码">
     ```ets
     import { ArcList, ArcListItem } from '@kit.ArkUI'
     // ---cut-after---
@@ -270,7 +274,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
 这两个注释和 `// ---cut-before---` 和 `// ---cut-after---` 注释的作用是相同的。
 
 <Tabs>
-  <TabItem label="Twoslash 渲染后效果">
+  <TabItem label="Twoslash 渲染后">
     ```ets twoslash
     const level: string = 'Danger'
     // ---cut-start---
@@ -279,7 +283,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
     console.log('This is shown')
     ```
   </TabItem>
-  <TabItem label="Markdown 原始代码">
+  <TabItem label="Markdown 源代码">
     ```ets
     const level: string = 'Danger'
     // ---cut-start---
@@ -295,7 +299,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
 您可以使用 `// @name` 和 `// @name: value` 注释来重写 `TypeScript` 语言特性和 [Twoslash手册选项](https://twoslash.netlify.app/refs/options#handbook-options)。这些注释将被从输出中移除。
 
 <Tabs>
-  <TabItem label="Twoslash 渲染后效果">
+  <TabItem label="Twoslash 渲染后">
     ```ets twoslash
     // @noImplicitAny: false
     // @target: esnext
@@ -305,7 +309,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
     const fn = a => a + 1
     ```
   </TabItem>
-  <TabItem label="Markdown 原始代码">
+  <TabItem label="Markdown 源代码">
     ```ets
     // @noImplicitAny: false
     // @target: esnext
@@ -328,7 +332,7 @@ Cut works after TypeScript has generated the project and pulled out all the edit
 因此，退而求其次，我们在使用了 `@showEmit` 注释时默认会展示 `.d.ets` 声明文件的代码：
 
 <Tabs>
-  <TabItem label="Twoslash 渲染后效果">
+  <TabItem label="Twoslash 渲染后">
     ```ets twoslash
     // @showEmit
     @Entry
@@ -340,9 +344,17 @@ Cut works after TypeScript has generated the project and pulled out all the edit
         }.width(100)
       }
     }
+
+    // 在 ohos-typescript@4.9.5-r10 中，@interface 装饰器已经支持了，但是貌似仍然无法展示装饰器的类型信息
+    @interface MyDecorator {
+      value: string
+    }
+
+    @MyDecorator({ value: 'Hello, world!' })
+    class MyClass {}
     ```
   </TabItem>
-  <TabItem label="Markdown 原始代码">
+  <TabItem label="Markdown 源代码">
     ```ets
     // @showEmit
     @Entry
@@ -354,6 +366,14 @@ Cut works after TypeScript has generated the project and pulled out all the edit
         }.width(100)
       }
     }
+
+    // 在 ohos-typescript@4.9.5-r10 中，@interface 装饰器已经支持了，但是貌似仍然无法展示装饰器的类型信息
+    @interface MyDecorator {
+      value: string
+    }
+
+    @MyDecorator({ value: 'Hello, world!' })
+    class MyClass {}
     ```
   </TabItem>
 </Tabs>

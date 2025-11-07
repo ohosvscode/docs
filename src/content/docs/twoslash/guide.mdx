@@ -16,7 +16,7 @@ import { Tabs, TabItem, LinkCard, CardGrid } from '@astrojs/starlight/components
 下面是一个简单的 `ArkTS Twoslash` 示例，我们这个文档是基于 `Astro Starlight` 框架构建的，因此允许开箱即用。您可以将鼠标移到代码上（如果您使用的移动端设备，可以点击一下代码段），如下面的 `struct Index` 的 `Index`, 以及 `@Component` 的 `Component` 等，都会出现对应的语义信息：
 
 <Tabs>
-  <TabItem label="Twoslash 渲染后效果">
+  <TabItem label="Twoslash 渲染后">
     ```ets twoslash
     @Entry
     @Component
@@ -30,7 +30,7 @@ import { Tabs, TabItem, LinkCard, CardGrid } from '@astrojs/starlight/components
     }
     ```
   </TabItem>
-  <TabItem label="Markdown 原始代码">
+  <TabItem label="Markdown 源代码">
   ```ets
   @Entry
   @Component
@@ -61,6 +61,21 @@ add(1, 2);
 ```tsx twoslash
 const a = <div>Hello, World!</div>;
 ```
+
+同时，`ohos-typescript@4.9.5-r10` 中 `@interface` 装饰器已经支持了，目前我们也默认开启了该功能：
+
+```ets twoslash
+@interface MyInterface {
+  value: string
+}
+
+@MyInterface({ value: 'Hello, world!' })
+class MyClass {}
+```
+
+:::note
+虽然但是，不知道为啥它的提示信息有些奇怪 (用 `class declaration` 改的，目前在 `deveco studio next` 中也是这样)，但是不影响使用和正常编译
+:::
 
 ## 使用和演示
 
