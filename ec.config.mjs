@@ -1,16 +1,25 @@
-import ecTwoSlash from '@arkts/twoslash-expressive-code'
+import fs from 'node:fs'
+import etsTwoSlash from '@arkts/twoslash-expressive-code'
 import { defineEcConfig } from '@astrojs/starlight/expressive-code'
-import etsTmLanguageJson from './ets.tmLanguage.json' with { type: 'json' }
+import ecTwoSlash from 'expressive-code-twoslash'
 
 export default defineEcConfig({
   plugins: [
-    ecTwoSlash(),
+    etsTwoSlash(),
+    ecTwoSlash({
+      twoslashOptions: {
+        compilerOptions: {
+          lib: ['/lib.es2021.d.ts', '/lib.dom.d.ts'],
+          jsx: 4,
+        },
+      },
+    }),
   ],
   shiki: {
     langs: [
       'ts',
       {
-        ...etsTmLanguageJson,
+        ...JSON.parse(fs.readFileSync('./ets.tmLanguage.json', 'utf-8')),
         name: 'ets',
         aliases: ['arkts'],
       },
