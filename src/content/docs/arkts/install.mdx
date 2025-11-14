@@ -194,9 +194,30 @@ import { LinkCard, CardGrid, Steps, Tabs, TabItem } from '@astrojs/starlight/com
       </TabItem>
     </Tabs>
 
-    ### 方法三: 直接通过 ArkTS 插件下载 SDK
+    ### 方法三: 直接通过本 ArkTS 插件下载 SDK
+
+    这个方法适用于您没有下载 `DevEco Studio` 或者您不想使用 `DevEco Studio` 中的 `OpenHarmony SDK` 的情况下。此时，插件本身也内置了 `OpenHarmony SDK` 的下载和管理功能可以供直接使用。
+
+    首先，打开插件的设置页面，找到 `ets.baseSdkPath` 选项，该选项将作为插件 `下载` 和 `管理` `OpenHarmony SDK` 的基目录。默认情况下该路径为 `${os.homedir}/OpenHarmony`, 其中 `${os.homedir}` 代表您当前用户主目录。您也可以手动修改该路径，比如在 `Windows` 下您可能不会选择存放在 `C盘`, 毕竟单个版本的 `OpenHarmony SDK` 体积也是不小的，有 1~2 GB 不等。
+    
+    我这里是 `MacOS` 系统，所以就把路径修改为了和 `DevEco Studio` 一样的路径，即 `${os.homedir}/Library/OpenHarmony/Sdk`。
+
+    ![ArkTS 插件设置页面](../../../assets/arkts-base-sdk-path.png "ArkTS 插件设置页面")
+
+    然后，您就可以打开命令面板，找到 `ETS: Install/Switch OpenHarmony SDK` 命令，选择它：
+
+    ![ArkTS 插件命令面板](../../../assets/arkts-install-switch-sdk.png "ArkTS 插件命令面板")
+
+    然后，选择一个您想安装的 `OpenHarmony SDK` 版本，回车：
+
+    ![ArkTS 插件选择一个 OpenHarmony SDK 版本](../../../assets/arkts-install-select-version.png "ArkTS 插件选择一个 OpenHarmony SDK 版本")
+
+    然后，您就可以看到插件正在下载 `OpenHarmony SDK` 了，下方会有一个进度提示条，等待下载完成即可：
+
+    ![ArkTS 插件下载 OpenHarmony SDK 进度](../../../assets/arkts-install-downloading.png "ArkTS 插件下载 OpenHarmony SDK 进度")
+
+    您也可以随时取消下载，下次下载时会自动恢复从上次中断的地方继续下载。
   </li>
 </ol>
 </Steps>
 
-TODO
