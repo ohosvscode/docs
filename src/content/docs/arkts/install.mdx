@@ -12,7 +12,7 @@ tableOfContents:
   maxHeadingLevel: 6
 ---
 
-import { LinkCard, CardGrid, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid, Steps, Tabs, TabItem, FileTree } from '@astrojs/starlight/components';
 
 长久以来，鸿蒙开发只能在 `DevEco Studio` 中进行，而 `DevEco Studio` 的一些体验可能对一些人来说不是特别友好，毕竟它是基于 `idea` 系列的 IDE 二开的；同时，鸿蒙的开发语言 `ArkTS` 本身是基于 `TypeScript` Fork 二开出来的，而 `vscode` 本身也是基于 `TypeScript` 开发的，进而使我萌生出在 `vscode` 中开发鸿蒙项目的想法，并尝试研究它的可行性。
 
@@ -32,6 +32,29 @@ import { LinkCard, CardGrid, Steps, Tabs, TabItem } from '@astrojs/starlight/com
 - 1.1.8+ 版本开始支持 `module.json5` 文件路径补全和跳转、引用表达式错误诊断、`requestPermissions` 权限补全等一系列新功能。
 
 ## 安装与配置
+
+整体而言，插件最主要的是需要提供您的 `OpenHarmony SDK` 的正确文件夹路径。如果您有 `DevEco Studio`，您可以直接选择自带在 `DevEco Studio` 中的 `OpenHarmony SDK`，或者您也可以通过 `DevEco Studio` 或者 `本插件` 无缝切换和选择其他版本的 `OpenHarmony SDK`。
+
+一个版本的 `OpenHarmony SDK` 通常包含以下几个文件夹：
+
+<FileTree>
+
+- ets/
+  - api/
+  - arkts/
+  - build-tools/
+    - ets-loader/
+      - tsconfig.json
+  - component/
+  - kits/
+- js/
+- native/
+- previewer/
+- toolchains/
+
+</FileTree>
+
+下面，我们提供几个常见的配置 `OpenHarmony SDK` 的方法：
 
 <Steps>
 <ol>
@@ -122,6 +145,7 @@ import { LinkCard, CardGrid, Steps, Tabs, TabItem } from '@astrojs/starlight/com
         ![手动选择一个 OpenHarmony SDK 路径](../../../assets/windows-11-sdk-choose.jpg "手动选择一个 OpenHarmony SDK 路径")
 
         一切完成！🎉 看看您的 `.ets` 文件是不是已经可以正常地使用补全、高亮、跳转、错误提示等所有代码功能了？
+
       </TabItem>
       <TabItem icon="apple" label="MacOS">
         在 `MacOS` 操作系统中，请打开 `访达`, 找到 `应用程序` 文件夹, 并找到 `DevEco Studio` 文件夹, 右键点击并选择 `显示包内容`:
