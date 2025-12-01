@@ -1,6 +1,7 @@
 // @ts-check
 import netlify from '@astrojs/netlify'
 import starlight from '@astrojs/starlight'
+import mermaid from 'astro-mermaid'
 import { defineConfig } from 'astro/config'
 import unocss from 'unocss/astro'
 
@@ -8,6 +9,10 @@ import unocss from 'unocss/astro'
 export default defineConfig({
   adapter: netlify(),
   integrations: [
+    mermaid({
+      theme: 'forest',
+      autoTheme: true,
+    }),
     unocss(),
     starlight({
       title: 'Arkcode',
@@ -25,6 +30,14 @@ export default defineConfig({
           lang: 'zh-CN',
         },
       },
+      plugins: [
+
+      ],
     }),
   ],
+  vite: {
+    ssr: {
+      noExternal: ['mermaid'],
+    },
+  },
 })
