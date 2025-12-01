@@ -1,27 +1,8 @@
 ---
-title: 插件架构与推荐 tsconfig.json 配置
+title: 插件架构
 sidebar:
-  order: 3
+  order: 4
 ---
-
-由于插件本身为了兼容性考虑，本插件只会屏蔽掉您指定的 `OpenHarmony SDK` 目录中的 `TypeScript` 文件的所有功能，并只保留 `ArkTS` 语言服务器提供的高亮、补全等LSP功能; 如果您遇到调整 `Promise.allSettled` 等之类的类型出现大面积报红，可以在您的项目根目录创建一个 `tsconfig.json` 文件，并添加以下内容：
-
-```json
-// This file using for Naily's ArkTS Support vscode extension.
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "Bundler",
-    "strict": true,
-    "skipLibCheck": true
-  }
-}
-```
-
-此时，`vscode 内置的 TypeScript 语言服务器`就能正确识别到 `Promise.allSettled` 等之类的声明文件，能减少这类报红的出现。
-
-## 插件架构
 
 ```mermaid
 flowchart TD

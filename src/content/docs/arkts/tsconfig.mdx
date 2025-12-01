@@ -1,0 +1,125 @@
+---
+title: tsconfig.json 配置
+sidebar:
+  order: 3
+---
+
+import { FileTree } from '@astrojs/starlight/components'
+
+由于插件本身为了兼容性考虑，本插件只会屏蔽掉您指定的 `OpenHarmony SDK` 目录中的 `TypeScript` 文件的所有功能，并只保留 `ArkTS` 语言服务器提供的高亮、补全等LSP功能; 如果您遇到跳转 `Promise.allSettled` 等之类的类型出现大面积报红，可以在您的项目根目录创建一个 `tsconfig.json` 文件，并添加以下内容：
+
+```json
+// This file using for Naily's ArkTS Support vscode extension.
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
+```
+
+此时，`vscode 内置的 TypeScript 语言服务器`就能正确识别到 `Promise.allSettled` 等之类的声明文件，能减少这类报红的出现。
+
+## 高级编译器选项
+
+插件扩展了 `tsconfig.json` 文件的 `compilerOptions` 编译器选项，下面列出一些其他的高级配置选项以供参考。一般情况下，您无需配置这些选项，插件会自动根据您的项目自动配置这些选项。
+
+### `ets`
+
+- **类型**: `object`
+- **默认值**: 自动合并 `OpenHarmony SDK` 中的 `tsconfig.json` 文件中的 `compilerOptions` 选项
+
+配置 `ets` 语言编译器选项。默认情况下，插件将会自动根据您的 `ets.sdkPath` vscode 插件配置的固定路径配置读取 `OpenHarmony SDK` 中的 `tsconfig.json` 文件中的 `compilerOptions` 选项自动合并该配置到您的 `tsconfig.json` 文件中，您如果修改了该配置则仅为深度合并该选项，具体读取的 `tsconfig.json` 文件路径为如下：`ets/build-tools/ets-loader/tsconfig.json`:
+
+<FileTree>
+
+- ets
+  - api/
+  - arkts/
+  - build-tools/
+    - ets-loader/
+      - **tsconfig.json**
+  - component/
+  - kits/
+- js/
+- native/
+- previewer/
+- toolchains/
+
+</FileTree>
+
+### `etsAnnotationsEnable`
+
+- **类型**: `boolean`
+- **默认值**: `true`
+
+配置是否启用 `ets` 语言的注解功能。默认为 `true`, 此时插件能正确提供 `@interface` 的补全和高亮提示信息功能：
+
+```ets twoslash
+@interface MyInterface {
+  value: string
+}
+
+@MyInterface({ value: 'Hello, world!' })
+class MyClass {}
+```
+
+:::note
+
+此语法仅在 `API20` 及以上的 `OpenHarmony SDK` 中支持，如果您当前项目的 `API` 版本低于 `API20`，则会导致 `hvigor` 编译不过（即使您能正常高亮提示 `@interface` 的语法，也会导致编译不过）。
+
+:::
+
+### `compatibleSdkVersion`
+
+- **类型**: `number`
+- **默认值**: `20`
+
+设置兼容的 `OpenHarmony SDK` 版本。目前该值被插件内部锁定为默认 `API20`。
+
+### `compatibleSdkVersionStage`
+
+- **类型**: `'beta1' | 'beta2' | 'beta3' | 'beta5' | 'beta6' | 'release'`
+- **默认值**: `'beta2'`
+
+设置兼容的 `OpenHarmony SDK` 版本阶段。目前该值被插件内部锁定为默认 `beta2`。
+
+### `packageManagerType`
+
+- **类型**: `'npm' | 'ohpm'`
+- **默认值**: `'ohpm'`
+
+设置项目使用的包管理器类型。目前该值被插件内部锁定为默认 `ohpm`。如果切换到 `npm`，则导入语句将切换为导入 `node_modules` 中的模块，而非 `oh_modules` 中的模块。
+
+### `enableStrictCheckOHModule`
+
+- **类型**: `boolean`
+- **默认值**: `true`
+
+控制对 `oh_modules` 目录下代码的检查严格程度。默认为 `true`，开启时将 `oh_modules` 视为项目代码，进行严格检查； `oh_modules` 中的错误会被报告为 `Error`，关闭时将降级为 `Warning`。
+
+### `etsLoaderPath`
+
+- **类型**: `string`
+- **默认值**: 自动指定为 `ets/build-tools/ets-loader`
+
+设置 `ets` 语言加载器路径。插件会自动根据您的 `ets.sdkPath` vscode 插件配置的固定路径配置读取 `OpenHarmony SDK` 中的 `ets/build-tools/ets-loader` 目录作为默认值。
+
+<FileTree>
+
+- ets
+  - api/
+  - arkts/
+  - build-tools/
+    - **ets-loader/**
+  - component/
+  - kits/
+- js/
+- native/
+- previewer/
+- toolchains/
+
+</FileTree>
