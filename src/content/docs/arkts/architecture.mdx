@@ -11,6 +11,8 @@ import { LinkCard, CardGrid, Card } from '@astrojs/starlight/components';
 ```mermaid
 flowchart TD
   ETS-VFS["@arkts/vfs"]
+  ETS-PROJECT-DETECTOR["@arkts/project-detector"] -->|"Using it in"| ETS-LANG-SERVICE
+  ETS-DEBUGGER["@arkts/debugger"] -->|"Using it in"| VSCODE-EXTENSION
   ETS-LANG-PLUGIN["@arkts/language-plugin"] -->|"Using it in"| ETS-TS-PLUGIN["@arkts/typescript-plugin"]
   ETS-LANG-PLUGIN -->|"Using it in"| ETS-LSP["@arkts/language-server"]
   OHOS-TS-PLUGIN["ohos-typescript"] -->|"Using it in"| ETS-LSP
@@ -19,8 +21,6 @@ flowchart TD
   ETS-SDK-DOWNLOADER["@arkts/sdk-downloader"] -->|"Using it in"| VSCODE-EXTENSION
   ETS-IMAGE-MANAGER["@arkts/image-manager"] -->|"Using it in"| VSCODE-EXTENSION
   ETS-LANG-SERVICE["@arkts/language-service"] -->|"Using it in"| ETS-LSP
-  ETS-PROJECT-DETECTOR["@arkts/project-detector"] -->|"Using it in"| ETS-LANG-SERVICE
-  ETS-DEBUGGER["@arkts/debugger"] -->|"Using it in"| VSCODE-EXTENSION
 ```
 
 ## 独立仓库项目
