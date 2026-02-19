@@ -1,7 +1,7 @@
 ---
 title: 安装和配置
 sidebar:
-  order: 1
+  order: 2
 head:
   - tag: link
     attrs:
@@ -14,28 +14,9 @@ tableOfContents:
 
 import { LinkCard, CardGrid, Steps, Tabs, TabItem, FileTree } from '@astrojs/starlight/components';
 
-长久以来，鸿蒙开发只能在 `DevEco Studio` 中进行，而 `DevEco Studio` 的一些体验可能对一些人来说不是特别友好，毕竟它是基于 `idea` 系列的 IDE 二开的；同时，鸿蒙的开发语言 `ArkTS` 本身是基于 `TypeScript` Fork 二开出来的，而 `vscode` 本身也是基于 `TypeScript` 开发的，进而使我萌生出在 `vscode` 中开发鸿蒙项目的想法，并尝试研究它的可行性。
+本插件最主要的是需要提供您的 `OpenHarmony SDK` 的正确文件夹路径。如果您有 `DevEco Studio`，您可以直接选择自带在 `DevEco Studio` 中的 `OpenHarmony SDK`，或者您也可以通过 `DevEco Studio` 或者 `本插件` 无缝切换和选择其他版本的 `OpenHarmony SDK`。
 
-目前，实践证明，这一切是行得通的，目前该插件仍然在积极开发中，并且已经取得了一定的成果，目前已经支持以下功能：
-
-- 1.x版本开始具备完整的`ArkTS`语言支持，全量支持所有`ArkTS`语法，包括各种 `代码补全`、`代码高亮`、`引用跳转`、`错误提示`、`代码格式化` 等完备的语言功能；
-- 完善的`JSON Schema`支持。支持以下文件的`JSON Schema`：
-  - `build-profile.json5` 模块级别/项目级别配置
-  - `oh-package.json5` 模块级别/项目级别配置
-  - `module.json5` 模块级别/项目级别配置
-  - `code-linter.json5` 模块级别/项目级别配置
-  - `resources/element/`下所有的`color.json`、`string.json`等的kv值配置
-  - `main_pages.json5`
-  - 以及更多!
-- 1.x版本开始支持安装和管理`OpenHarmony SDK`，并且支持根据当前打开的项目自动探测`API版本`，发出弹窗提示`下载`或`切换`;
-- 1.1.6+ 版本开始支持完美的 `$r` 函数补全和跳转、支持 `module.json5` 文件的补全和跳转、`resources/element/` 下所有`json`文件点击查询全局引用；由 [@arkts/project-detector](https://github.com/ohosvscode/project-detector) hvigor项目分析器提供强力支撑;
-- 1.1.8+ 版本开始支持 `module.json5` 文件路径补全和跳转、引用表达式错误诊断、`requestPermissions` 权限补全等一系列新功能。
-
-## 安装与配置
-
-整体而言，插件最主要的是需要提供您的 `OpenHarmony SDK` 的正确文件夹路径。如果您有 `DevEco Studio`，您可以直接选择自带在 `DevEco Studio` 中的 `OpenHarmony SDK`，或者您也可以通过 `DevEco Studio` 或者 `本插件` 无缝切换和选择其他版本的 `OpenHarmony SDK`。
-
-一个版本的 `OpenHarmony SDK` 通常包含以下几个文件夹：
+一个单独版本的 `OpenHarmony SDK` 通常包含这样的目录结构：
 
 <FileTree>
 
@@ -60,9 +41,9 @@ import { LinkCard, CardGrid, Steps, Tabs, TabItem, FileTree } from '@astrojs/sta
 <ol>
   <li>
 
-    ##### 安装插件
+    ##### 安装本插件
 
-    目前，该插件在 `open-vsx` 和 `vscode marketplace` 上均可找到，直接在`类 vscode` 的编辑器中（如 `vscode`、`cursor`、`trae`、`argument`、`codebuddy`等）搜索 `Naily's ArkTS Support` 即可找到该插件。如果您搜不到该插件，可以点击下面的链接跳转到对应的商店页面进行安装：
+    目前，插件在 `open-vsx` 和 `vscode marketplace` 上均可找到，直接在`类 vscode` 的编辑器中（如 `vscode`、`cursor`、`trae`、`argument`、`codebuddy`等）搜索 `Naily's ArkTS Support` 即可找到该插件。如果您搜不到该插件，可以点击下面的链接跳转到对应的商店页面进行安装：
 
     <CardGrid>
       <LinkCard title="vscode marketplace" description="点击前往 microsoft marketplace 进行安装。" href="https://marketplace.visualstudio.com/items?itemName=NailyZero.vscode-naily-ets" target="_blank" />
